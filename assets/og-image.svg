@@ -20,7 +20,7 @@
   <!-- Subtle horizontal band -->
   <rect y="420" width="1200" height="210" fill="#062b43" />
   <!-- Whale group -->
-  <g transform="translate(160 40)" filter="url(#softShadow)">
+  <g transform="translate(260 -20)" filter="url(#softShadow)">
     <ellipse cx="360" cy="340" rx="300" ry="40" fill="#000" opacity="0.08" />
     <path fill="#4acfff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M830 300c-6-14-22-9-35 2-29 22-45 21-57 14-10-6-13-13-20-23-15-27-44-44-82-45-28-1-43 5-66 18-20 12-40 15-77 11-45-4-75-4-101 3-42 11-75 43-83 81-15 70 42 137 150 154 89 14 173 0 221-38 41-32 51-69 36-110-5-12-5-12 7-13 57-5 101-49 115-74z" />
     <path fill="#80ddff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M340 404c12 46 65 84 143 95 81 12 156-6 191-45 16-18 18-33 15-50-3-9-3-9-13-6-76 24-170 26-236 5-34-11-69-17-100-19z" />
@@ -39,10 +39,10 @@
   </g>
   <!-- Text -->
   <g font-family="'Fredoka', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif" text-rendering="geometricPrecision" filter="url(#softShadow)">
-    <text x="120" y="250" font-size="150" font-weight="700" fill="#4acfff">WhaleLink</text>
-    <text x="120" y="360" font-size="150" font-weight="700" fill="#4acfff">Social</text>
-    <text x="124" y="430" font-size="48" fill="#e6f7ff" font-weight="600" letter-spacing="1px">Surfacing connections. Dive deeper together.</text>
-    <text x="124" y="485" font-size="38" fill="#70f0c3" font-weight="600">hi@whalelink.social</text>
-    <text x="124" y="535" font-size="34" fill="#3dd5ff" opacity="0.95">github.com/WhaleLinkSocial/whalelink.social</text>
+  <text x="120" y="245" font-size="118" font-weight="700" fill="#4acfff">WhaleLink</text>
+  <text x="120" y="330" font-size="118" font-weight="700" fill="#4acfff">Social</text>
+  <text x="124" y="400" font-size="40" fill="#e6f7ff" font-weight="600" letter-spacing="0.5px">Surfacing connections. Dive deeper together.</text>
+  <text x="124" y="448" font-size="34" fill="#70f0c3" font-weight="600">hi@whalelink.social</text>
+  <text x="124" y="490" font-size="28" fill="#3dd5ff" opacity="0.95">github.com/WhaleLinkSocial/whalelink.social</text>
   </g>
 </svg>

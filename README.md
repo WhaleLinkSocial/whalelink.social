@@ -4,7 +4,7 @@ Simple static landing page featuring an animated breaching cartoon humpback whal
 
 ## Structure
 - `index.html` – Single-page site with inline CSS and a tiny JS snippet.
-- `assets/` – SVG whale art (`whale.svg` – outlined cartoon with spout), Open Graph image (`og-image.svg`), favicon (`favicon.svg`). PNG fallbacks are generated.
+- `assets/` – SVG whale art (`whale.svg` – outlined cartoon with spout), Open Graph image (`og-image.svg`), favicon (`favicon.svg`). PNG fallbacks are committed (render locally with script).
 - `.github/workflows/generate-png.yml` – CI workflow to export PNG assets from SVG sources.
 
 ## Local Preview
@@ -25,14 +25,25 @@ Then visit: http://localhost:8080
 - Favicon: Update `assets/favicon.svg` (workflow regenerates PNG variants: `favicon-192.png`, `apple-touch-icon.png`).
 - Whale art: `assets/whale.svg` uses the outlined cartoon style (colors: base `#4acfff`, highlight `#80ddff`, outline `#27303a`). Adjust paths or palette for brand tweaks.
 
-## Automation
-GitHub Action auto-generates PNG fallbacks:
-| Source SVG | Generated PNG(s) |
-| ---------- | ---------------- |
-| `assets/og-image.svg` | `assets/og-image.png` |
-| `assets/favicon.svg` | `assets/favicon-192.png`, `assets/apple-touch-icon.png` |
+## Asset Rendering
+Render PNG fallbacks locally (macOS examples shown):
 
-If you edit an SVG and push, the workflow will commit the new PNGs.
+```bash
+# Install one backend
+brew install librsvg imagemagick   # fastest
+# or
+brew install --cask inkscape
+
+# Generate PNGs
+./scripts/render-assets.sh
+```
+
+Outputs written:
+- `assets/og-image.png`
+- `assets/favicon-192.png`
+- `assets/apple-touch-icon.png`
+
+Commit the PNGs after updating SVG sources.
 
 ## Contact
 Email: hi@whalelink.social
