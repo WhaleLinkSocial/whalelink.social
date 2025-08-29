@@ -39,10 +39,10 @@
   </g>
   <!-- Text -->
   <g font-family="'Fredoka', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif" text-rendering="geometricPrecision" filter="url(#softShadow)">
-  <text x="120" y="245" font-size="118" font-weight="700" fill="#4acfff">WhaleLink</text>
-  <text x="120" y="330" font-size="118" font-weight="700" fill="#4acfff">Social</text>
-  <text x="124" y="400" font-size="40" fill="#e6f7ff" font-weight="600" letter-spacing="0.5px">Surfacing connections. Dive deeper together.</text>
-  <text x="124" y="448" font-size="34" fill="#70f0c3" font-weight="600">hi@whalelink.social</text>
-  <text x="124" y="490" font-size="28" fill="#3dd5ff" opacity="0.95">github.com/WhaleLinkSocial/whalelink.social</text>
+  <text x="90" y="245" font-size="118" font-weight="700" fill="#4acfff">WhaleLink</text>
+  <text x="90" y="330" font-size="118" font-weight="700" fill="#4acfff">Social</text>
+  <text x="94" y="400" font-size="40" fill="#e6f7ff" font-weight="600" letter-spacing="0.5px">Surfacing connections. Dive deeper together.</text>
+  <text x="94" y="448" font-size="34" fill="#70f0c3" font-weight="600">hi@whalelink.social</text>
+  <text x="94" y="490" font-size="28" fill="#3dd5ff" opacity="0.95">github.com/WhaleLinkSocial/whalelink.social</text>
   </g>
 </svg>
