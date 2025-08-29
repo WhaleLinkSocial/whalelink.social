@@ -13,18 +13,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install SVG to PNG tooling (librsvg + ImageMagick fallback)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends librsvg2-bin imagemagick
 
-      - name: Install Inkscape
-        run: sudo apt-get update && sudo apt-get install -y inkscape
-
-      - name: Export OG Image PNG
+      - name: Export PNGs (rsvg-convert headless)
         run: |
-          inkscape assets/og-image.svg --export-type=png --export-filename=assets/og-image.png -w 1200 -h 630
-
-      - name: Export Favicon PNGs
-        run: |
-          inkscape assets/favicon.svg --export-type=png --export-filename=assets/favicon-192.png -w 192 -h 192
-          inkscape assets/favicon.svg --export-type=png --export-filename=assets/apple-touch-icon.png -w 180 -h 180
+          set -euo pipefail
+          echo "Generating og-image.png"
+          rsvg-convert -w 1200 -h 630 assets/og-image.svg -o assets/og-image.png
+          echo "Generating favicon-192.png"
+          rsvg-convert -w 192 -h 192 assets/favicon.svg -o assets/favicon-192.png
+          echo "Generating apple-touch-icon.png"
+          rsvg-convert -w 180 -h 180 assets/favicon.svg -o assets/apple-touch-icon.png
+          # Quick sanity: ensure files exist & non-empty
+          for f in assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png; do
+            [ -s "$f" ] || { echo "File $f missing or empty" >&2; exit 1; }
+          done
+      - name: (Optional) Compare sizes
+        run: ls -lh assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png
 
       - name: Commit & Push
         run: |
@@ -33,5 +39,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png || true
-          git commit -m "chore: generate png social + favicon assets" || echo "Nothing to commit"
+          git commit -m "chore: regenerate png social + favicon assets (rsvg-convert)" || echo "Nothing to commit"
           git push
