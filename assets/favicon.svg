@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WhaleLink logo">
+  <title>WhaleLink Logo</title>
+  <desc>Circle icon containing an outlined cartoon whale with a small three-part spout.</desc>
+  <circle cx="32" cy="32" r="32" fill="#021826" />
+  <g transform="translate(-4 -6) scale(.62)" stroke="#27303a" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Body -->
+    <path fill="#4acfff" stroke-width="3.2" d="M88 70c-3-6-12-4-18 1-14 10-21 9-27 6-5-3-6-6-9-11-7-12-21-19-38-19-13-1-20 2-31 8-10 5-17 7-35 5-21-2-37-2-50 2-20 6-35 20-38 37-7 32 19 63 70 70 42 6 80 0 102-17 19-15 24-31 17-49-2-5-2-5 3-6 27-2 46-22 53-40z" />
+    <!-- Belly highlight -->
+    <path fill="#80ddff" stroke-width="3.2" d="M-35 118c6 20 31 37 68 42 38 5 74-3 91-19 7-8 9-15 7-23-1-4-1-4-6-3-36 11-81 11-112 2-16-5-33-7-48-9z" />
+    <!-- Mouth line -->
+    <path d="M-5 102c6 4 18 7 32 9 30 4 58 1 84-7" stroke-width="3.2" fill="none" opacity=".6" />
+    <!-- Eye -->
+    <circle cx="22" cy="96" r="5" fill="#fff" stroke-width="3.2" />
+    <circle cx="23.5" cy="96" r="2.2" fill="#27303a" stroke-width="2" />
+    <!-- Cheek -->
+    <circle cx="12" cy="106" r="4" fill="#ffaa54" opacity=".55" stroke-width="0" />
+    <!-- Fin -->
+    <path fill="#4acfff" stroke-width="3.2" d="M-1 110c-12-4-21-4-31-3-5 1-7 5-5 10 5 11 18 19 34 22 14 2 23 6 31 12 3 2 6-1 7-5 1-5-2-13-6-21-4-9-11-15-30-15z" />
+    <path fill="#80ddff" stroke-width="3.2" d="M-4 120c-8-3-16-3-22-3 6 8 16 12 27 15 8 2 13 4 19 8-2-8-10-16-24-20z" opacity=".85" />
+    <!-- Spout -->
+    <g fill="#4acfff" stroke-width="3.2">
+      <path d="M30 75c2-7-3-14-10-15-4-2-9 1-11 5 3-1 6-1 8 0 5 2 7 5 7 10 0 0 5-1 6 0z" />
+      <path d="M42 70c1-6-2-11-7-14-4-2-8-1-12 2 4 0 7 1 9 4 3 3 4 7 3 10 0 0 5-1 7-2z" />
+      <path d="M24 80c1-4-1-9-5-11-3-2-6-2-9 0 3 1 5 2 6 4 2 3 3 5 2 8l6-1z" />
+    </g>
+  </g>
+</svg>

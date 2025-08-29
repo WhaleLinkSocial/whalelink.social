@@ -1,0 +1,37 @@
+name: Generate PNG Assets
+on:
+  push:
+    paths:
+      - 'assets/og-image.svg'
+      - 'assets/favicon.svg'
+      - '.github/workflows/generate-png.yml'
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Inkscape
+        run: sudo apt-get update && sudo apt-get install -y inkscape
+
+      - name: Export OG Image PNG
+        run: |
+          inkscape assets/og-image.svg --export-type=png --export-filename=assets/og-image.png -w 1200 -h 630
+
+      - name: Export Favicon PNGs
+        run: |
+          inkscape assets/favicon.svg --export-type=png --export-filename=assets/favicon-192.png -w 192 -h 192
+          inkscape assets/favicon.svg --export-type=png --export-filename=assets/apple-touch-icon.png -w 180 -h 180
+
+      - name: Commit & Push
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"; exit 0; fi
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png || true
+          git commit -m "chore: generate png social + favicon assets" || echo "Nothing to commit"
+          git push

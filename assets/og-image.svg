@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Open Graph Preview Image (solid style) for WhaleLink Social -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">WhaleLink Social</title>
+  <desc id="ogDesc">Solid color breaching humpback whale with tagline.</desc>
+  <rect width="1200" height="630" fill="#021826" />
+  <defs>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b" />
+      <feOffset in="b" dx="0" dy="4" result="o" />
+      <feComponentTransfer in="o" result="oa">
+        <feFuncA type="linear" slope="0.45" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="oa" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Subtle horizontal band -->
+  <rect y="420" width="1200" height="210" fill="#062b43" />
+  <!-- Whale group -->
+  <g transform="translate(160 40)" filter="url(#softShadow)">
+    <ellipse cx="360" cy="340" rx="300" ry="40" fill="#000" opacity="0.08" />
+    <path fill="#4acfff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M830 300c-6-14-22-9-35 2-29 22-45 21-57 14-10-6-13-13-20-23-15-27-44-44-82-45-28-1-43 5-66 18-20 12-40 15-77 11-45-4-75-4-101 3-42 11-75 43-83 81-15 70 42 137 150 154 89 14 173 0 221-38 41-32 51-69 36-110-5-12-5-12 7-13 57-5 101-49 115-74z" />
+    <path fill="#80ddff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M340 404c12 46 65 84 143 95 81 12 156-6 191-45 16-18 18-33 15-50-3-9-3-9-13-6-76 24-170 26-236 5-34-11-69-17-100-19z" />
+    <path fill="none" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".6" d="M410 368c13 8 40 15 71 19 66 9 129 3 189-16" />
+    <circle cx="585" cy="346" r="12" fill="#fff" stroke="#27303a" stroke-width="5" />
+    <circle cx="588" cy="346" r="6" fill="#27303a" />
+    <circle cx="560" cy="364" r="9" fill="#ffaa54" opacity=".5" />
+    <path fill="#4acfff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M350 380c-26-8-43-8-64-5-10 2-14 10-10 20 10 24 39 43 69 49 28 5 47 14 66 26 6 4 12-2 14-11 2-10-3-28-11-43-9-17-24-31-64-36z" />
+    <path fill="#80ddff" stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".85" d="M344 402c-17-6-31-7-44-6 13 16 34 24 57 29 16 3 27 9 38 16-3-18-20-35-51-39z" />
+    <!-- Spout -->
+    <g stroke="#27303a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#4acfff">
+      <path d="M615 250c3-14-7-30-21-33-10-3-19 2-25 11 6-3 12-3 18 0 9 5 13 12 12 21 0 0 11-2 16 1z" />
+      <path d="M640 240c2-12-4-23-14-29-8-4-16-3-25 3 8 0 14 2 18 9 7 7 8 15 6 22 0 0 10-2 15-5z" />
+      <path d="M600 258c1-9-4-19-10-24-6-4-12-4-20-1 6 2 10 5 13 9 5 6 5 12 5 18l12-2z" />
+    </g>
+  </g>
+  <!-- Text -->
+  <g font-family="'Fredoka', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif" text-rendering="geometricPrecision" filter="url(#softShadow)">
+    <text x="120" y="250" font-size="150" font-weight="700" fill="#4acfff">WhaleLink</text>
+    <text x="120" y="360" font-size="150" font-weight="700" fill="#4acfff">Social</text>
+    <text x="124" y="430" font-size="48" fill="#e6f7ff" font-weight="600" letter-spacing="1px">Surfacing connections. Dive deeper together.</text>
+    <text x="124" y="485" font-size="38" fill="#70f0c3" font-weight="600">hi@whalelink.social</text>
+    <text x="124" y="535" font-size="34" fill="#3dd5ff" opacity="0.95">github.com/WhaleLinkSocial/whalelink.social</text>
+  </g>
+</svg>
