@@ -29,6 +29,14 @@ jobs:
           for f in assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png; do
             [ -s "$f" ] || { echo "File $f missing or empty" >&2; exit 1; }
           done
+      - name: Record source SVG hashes (ensures commit diff when sources change)
+        run: |
+          set -euo pipefail
+          { 
+            echo '# Auto-generated hashes of source SVGs';
+            sha256sum assets/og-image.svg;
+            sha256sum assets/favicon.svg;
+          } > assets/.render-hash
       - name: (Optional) Compare sizes
         run: ls -lh assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png
 
@@ -38,6 +46,6 @@ jobs:
             echo "No changes to commit"; exit 0; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png || true
+          git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png assets/.render-hash || true
           git commit -m "chore: regenerate png social + favicon assets (rsvg-convert)" || echo "Nothing to commit"
           git push
