@@ -3,9 +3,9 @@
 Simple static landing page featuring an animated breaching cartoon humpback whale (outlined style with spout), playful bubbles, and contact links.
 
 ## Structure
-- `index.html` – Single-page site with inline CSS and a tiny JS snippet.
-- `assets/` – SVG whale art (`whale.svg` – outlined cartoon with spout), Open Graph image (`og-image.svg`), favicon (`favicon.svg`). PNG fallbacks are committed (render locally with script).
-- `.github/workflows/generate-png.yml` – CI workflow to export PNG assets from SVG sources.
+- `index.html` – Single-page site with inline CSS and minimal JS.
+- `assets/` – SVG whale (`whale.svg`), Open Graph image (`og-image.svg`), favicon (`favicon.svg`) plus committed PNG fallbacks (`og-image.png`, `favicon-192.png`, `apple-touch-icon.png`).
+- `scripts/render-assets.sh` – Local helper to regenerate PNG fallbacks (auto-detects rsvg / Inkscape / ImageMagick).
 
 ## Local Preview
 Just open `index.html` in a browser.
@@ -18,15 +18,15 @@ python3 -m http.server 8080
 Then visit: http://localhost:8080
 
 ## Customization
-- Swap tagline: Edit the `<p class="tag">` line.
-- Animation timing: Keyframes `breach`, `splash`, and `rise` inside the `<style>` tag.
-- Reduce motion: Users with `prefers-reduced-motion` are respected (animations disabled).
-- Social preview: Edit `assets/og-image.svg` (workflow regenerates `og-image.png`).
-- Favicon: Update `assets/favicon.svg` (workflow regenerates PNG variants: `favicon-192.png`, `apple-touch-icon.png`).
-- Whale art: `assets/whale.svg` uses the outlined cartoon style (colors: base `#4acfff`, highlight `#80ddff`, outline `#27303a`). Adjust paths or palette for brand tweaks.
+- Tagline: Edit `<p class="tag">` in `index.html`.
+- Animation timing: Adjust `@keyframes breach`, `spout`, `rise`, `splash` in the `<style>` block.
+- Reduce motion: Already handled via `@media (prefers-reduced-motion: reduce)`.
+- Social preview: Edit `assets/og-image.svg` then regenerate PNG (`./scripts/render-assets.sh`).
+- Favicon: Edit `assets/favicon.svg` and regenerate PNGs.
+- Whale art: `assets/whale.svg` / inline SVG share style (base `#4acfff`, highlight `#80ddff`, outline `#27303a`).
 
 ## Asset Rendering
-Render PNG fallbacks locally (macOS examples shown):
+Regenerate PNG fallbacks locally:
 
 ```bash
 # Install one backend
@@ -38,12 +38,12 @@ brew install --cask inkscape
 ./scripts/render-assets.sh
 ```
 
-Outputs written:
+Outputs:
 - `assets/og-image.png`
 - `assets/favicon-192.png`
 - `assets/apple-touch-icon.png`
 
-Commit the PNGs after updating SVG sources.
+Commit the PNGs after updating the SVG sources.
 
 ## Contact
 Email: hi@whalelink.social
