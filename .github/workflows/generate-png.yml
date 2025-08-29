@@ -5,7 +5,12 @@ on:
       - 'assets/og-image.svg'
       - 'assets/favicon.svg'
       - '.github/workflows/generate-png.yml'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force a commit even if PNGs identical (adds timestamp marker)'
+        required: false
+        default: 'false'
 
 jobs:
   build:
@@ -40,12 +45,18 @@ jobs:
       - name: (Optional) Compare sizes
         run: ls -lh assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png
 
+      - name: Force marker (optional)
+        if: ${{ github.event.inputs.force == 'true' }}
+        run: |
+          date -u +'%Y-%m-%dT%H:%M:%SZ' > assets/.forced-render
       - name: Commit & Push
         run: |
-          if git diff --quiet; then
-            echo "No changes to commit"; exit 0; fi
+          set -euo pipefail
+          # Stage all potential outputs first (captures untracked files)
+          git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png assets/.render-hash assets/.forced-render 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No staged asset changes to commit"; exit 0; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add assets/og-image.png assets/favicon-192.png assets/apple-touch-icon.png assets/.render-hash || true
           git commit -m "chore: regenerate png social + favicon assets (rsvg-convert)" || echo "Nothing to commit"
           git push
